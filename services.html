@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoHealth - Chronic Disease Detection</title>
+
+  <!-- css -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- boxed bg -->
+  <link id="bodybg" href="bodybg/bg1.css" rel="stylesheet" type="text/css" />
+  <!-- template skin -->
+  <link id="t-colors" href="color/default.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .bg-skin {
+      background: #1abc9c;
+    }
+    
+    .nav>li>a:hover, .nav>li>a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      color: #1abc9c;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-skin {
+      background-color: #1abc9c;
+      border-color: #1abc9c;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-skin:hover {
+      background-color: #16a085;
+      border-color: #16a085;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      min-height: 300px;
+    }
+    
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .box h4 {
+      font-size: 22px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    .service-desc h5 {
+      margin-bottom: 10px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    .service-box {
+      margin-bottom: 35px;
+    }
+    
+    .service-icon {
+      margin-bottom: 15px;
+    }
+    
+    .intro-content {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      padding: 200px 0 60px;
+    }
+    
+    #boxes {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+    }
+    
+    #service {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: #e4d6d6;
+      padding: 40px 0;
+    }
+    
+    .navbar-brand h5 {
+      display: inline-block;
+      vertical-align: middle;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-brand:hover h5 {
+      transform: translateY(-2px);
+    }
+    
+    .container.navigation {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .well-trans {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+    }
+    
+    .lead-list li {
+      margin-bottom: 20px;
+    }
+    
+    .icon-success {
+      color: #1abc9c;
+    }
+    
+    .feature-icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #1abc9c;
+    }
+    
+    .health-data-chart {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    
+    .stats-counter {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1abc9c;
+      margin-bottom: 10px;
+    }
+    
+    .stats-text {
+      font-size: 16px;
+      color: #eee;
+    }
+    
+    .company-social li {
+      margin-right: 5px;
+    }
+    
+    .company-social a {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .company-social a:hover {
+      background: #1abc9c;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container navigation" style="width: 98.85vw; height: 70px; padding-top: 10px;">
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand js-scroll-trigger" href="index.php" style="margin-top: 0px;">
+        <h5 style="color: white;"><i class="fa fa-heartbeat" aria-hidden="true"></i>&nbsp; CHRONOHEALTH</h5>
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active" style="margin-right: 40px;"><a href="index.php" style="color: white">HOME</a></li>
+        <li class="active" style="margin-right: 40px;"><a href="services.html" style="color: white">ABOUT US</a></li>
+        <li><a href="contact.html" style="margin-right: 40px; color: white">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <section id="intro" class="intro">
+      <div class="intro-content" style="padding-top: 75px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
+                <h2 style="color: white; font-weight: 700;">CHRONOHEALTH</h2>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.1s">
+                <h4 class="h-light" style="color: #efe1e1; margin-bottom: 20px;">Advanced Chronic Disease Detection & Management</h4>
+              </div>
+              <div class="well well-trans">
+                <div class="wow fadeInRight" data-wow-delay="0.1s">
+                  <ul class="lead-list">
+                    <li>
+                      <span class="fa fa-check-square-o fa-2x icon-success"></span>
+                      <span class="list">
+                        <strong>Early Detection of Chronic Conditions</strong><br />
+                        Our AI-powered algorithms analyze patient data to identify early warning signs of chronic diseases before they progress.
+                      </span>
+                    </li>
+                    <li>
+                      <span class="fa fa-check-square-o fa-2x icon-success"></span>
+                      <span class="list">
+                        <strong>Comprehensive Health Analytics</strong><br />
+                        Advanced data visualization tools help both patients and physicians track health metrics and treatment progress over time.
+                      </span>
+                    </li>
+                    <li>
+                      <span class="fa fa-check-square-o fa-2x icon-success"></span>
+                      <span class="list">
+                        <strong>Personalized Treatment Plans</strong><br />
+                        Our system generates custom care plans based on individual patient data, medical history, and latest research.
+                      </span>
+                    </li>
+                  </ul>
+                  <p class="text-right wow bounceIn" data-wow-delay="0.4s">
+                    <a href="#" class="btn btn-skin btn-lg" style="background: #1abc9c; color: white;">Learn more <i class="fa fa-angle-right"></i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+                <img src="https://img.freepik.com/free-vector/doctor-examining-patient-clinic-illustrated_23-2148856559.jpg" class="img-responsive" alt="Doctor with patient" style="border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.2);" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="boxes" class="home-section paddingtop-80">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center mb-5">
+            <h2 style="color: white; margin-bottom: 40px; font-weight: 700;">POWERFUL FEATURES</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+              <div class="box text-center">
+                <i class="fa fa-lock fa-3x bg-skin" style="color: white; margin-bottom: 20px;"></i>
+                <h4>Secure Login & Patient Management</h4>
+                <p>
+                  Our platform features multi-factor authentication and end-to-end encryption to protect sensitive patient data. Comprehensive patient management tools allow healthcare providers to maintain organized, HIPAA-compliant records.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="wow fadeInUp" data-wow-delay="0.5s">
+              <div class="box text-center">
+                <i class="fa fa-keyboard-o fa-3x bg-skin" style="color: white; margin-bottom: 20px;"></i>
+                <h4>Quick Data Entry System</h4>
+                <p>
+                  Our intuitive interface makes entering patient data quick and efficient with customizable templates, auto-fill capabilities, and integrated measurement devices for direct data input. Reduced data entry time means more face-to-face patient care.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="wow fadeInUp" data-wow-delay="0.7s">
+              <div class="box text-center">
+                <i class="fa fa-microphone fa-3x bg-skin" style="color: white; margin-bottom: 20px;"></i>
+                <h4>Voice-to-Text Capabilities</h4>
+                <p>
+                  Our advanced voice recognition system allows physicians to dictate notes and observations that are automatically transcribed and added to patient records. This hands-free approach streamlines workflow while ensuring accurate documentation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-sm-4 col-md-4">
+            <div class="wow fadeInUp" data-wow-delay="0.9s">
+              <div class="box text-center">
+                <i class="fa fa-file-text fa-3x bg-skin" style="color: white; margin-bottom: 20px;"></i>
+                <h4>Auto-Generated Summaries</h4>
+                <p>
+                  Our AI analyzes patient data to generate concise clinical summaries highlighting key health trends, potential issues, and treatment effectiveness. These summaries provide quick insights that help healthcare providers make informed decisions efficiently.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="wow fadeInUp" data-wow-delay="1.1s">
+              <div class="box text-center">
+                <i class="fa fa-bell fa-3x bg-skin" style="color: white; margin-bottom: 20px;"></i>
+                <h4>Smart Alerting System</h4>
+                <p>
+                  Our intelligent alert system monitors patient data in real-time and notifies healthcare providers of concerning changes or abnormal patterns. Customizable alert thresholds ensure clinicians receive notifications only when truly necessary.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <div class="wow fadeInUp" data-wow-delay="1.3s">
+              <div class="box text-center">
+                <i class="fa fa-line-chart fa-3x bg-skin" style="color: white; margin-bottom: 20px;"></i>
+                <h4>Predictive Analytics</h4>
+                <p>
+                  Using machine learning algorithms, our platform analyzes historical and current patient data to predict potential health complications before they occur. This proactive approach enables preventive interventions that improve outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="home-section nopadding paddingtop-60" style="height: 80%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center mb-5">
+            <h2 style="color: white; margin-bottom: 40px; font-weight: 700;">CHRONIC DISEASE SPECIALTIES</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <div class="wow fadeInLeft" data-wow-delay="0.2s">
+              <div class="health-data-chart">
+                <img src="https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg" class="img-responsive" alt="Health data visualization" style="border-radius: 10px;" />
+                <div style="margin-top: 20px;">
+                  <h4 style="color: #2c3e50; text-align: center; font-weight: 600;">Data-Driven Healthcare</h4>
+                  <p style="color: #555; text-align: center;">Our platform transforms complex health data into actionable insights</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-3">
+            <div class="wow fadeInRight" data-wow-delay="0.1s">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-heartbeat fa-3x" style="color:#1abc9c"></span>
+                </div>
+                <div class="service-desc">
+                  <h5 class="h-light">Cardiovascular Disease</h5>
+                  <p>Advanced monitoring of heart health metrics with ECG analysis and trend detection for early intervention.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="wow fadeInRight" data-wow-delay="0.2s">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-tint fa-3x" style="color:#1abc9c"></span>
+                </div>
+                <div class="service-desc">
+                  <h5 class="h-light">Diabetes Management</h5>
+                  <p>Comprehensive glucose tracking with diet correlations and medication effectiveness analysis.</p>
+                </div>
+              </div>
+            </div>
+            <div class="wow fadeInRight" data-wow-delay="0.3s">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-lungs fa-3x" style="color:#1abc9c"></span>
+                </div>
+                <div class="service-desc">
+                  <h5 class="h-light">Respiratory Conditions</h5>
+                  <p>Monitoring of lung function with environmental trigger identification and treatment response tracking.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-3">
+            <div class="wow fadeInRight" data-wow-delay="0.1s">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-brain fa-3x" style="color:#1abc9c"></span>
+                </div>
+                <div class="service-desc">
+                  <h5 class="h-light">Neurological Disorders</h5>
+                  <p>Cognitive function tracking with subtle change detection and personalized cognitive exercises.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="wow fadeInRight" data-wow-delay="0.2s">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-bone fa-3x" style="color:#1abc9c"></span>
+                </div>
+                <div class="service-desc">
+                  <h5 class="h-light">Musculoskeletal Conditions</h5>
+                  <p>Movement analysis with pain pattern recognition and physical therapy progress tracking.</p>
+                </div>
+              </div>
+            </div>
+            <div class="wow fadeInRight" data-wow-delay="0.3s">
+              <div class="service-box">
+                <div class="service-icon">
+                  <span class="fa fa-kidneys fa-3x" style="color:#1abc9c"></span>
+                </div>
+                <div class="service-desc">
+                  <h5 class="h-light">Renal Disease</h5>
+                  <p>Kidney function monitoring with hydration status tracking and medication interaction alerts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row" style="margin-top: 60px;">
+          <div class="col-md-3 text-center">
+            <div class="stats-counter">98%</div>
+            <div class="stats-text">Detection Accuracy</div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="stats-counter">67%</div>
+            <div class="stats-text">Early Intervention Rate</div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="stats-counter">45%</div>
+            <div class="stats-text">Reduced Hospital Readmissions</div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="stats-counter">12K+</div>
+            <div class="stats-text">Patients Successfully Monitored</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="wow fadeInDown" data-wow-delay="0.1s">
+              <div class="widget">
+                <h5>About ChronoHealth</h5>
+                <p>
+                  ChronoHealth combines advanced AI technology with medical expertise to revolutionize chronic disease management through early detection and personalized care plans.
+                </p>
+              </div>
+            </div>
+            <div class="wow fadeInDown" data-wow-delay="0.1s">
+              <div class="widget">
+                <h5>Information</h5>
+                <ul>
+                  <li><a style="color: #e4d6d6" href="#">Home</a></li>
+                  <li><a style="color: #e4d6d6" href="#">Data Security</a></li>
+                  <li><a style="color: #e4d6d6" href="#">Research Partnerships</a></li>
+                  <li><a style="color: #e4d6d6" href="#">Terms & conditions</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="wow fadeInDown" data-wow-delay="0.1s">
+              <div class="widget">
+                <h5>ChronoHealth Support</h5>
+                <p>
+                  We're dedicated to providing continuous support for both healthcare providers and patients using our platform.
+                </p>
+                <ul>
+                  <li>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
+                    </span> 24/7 Technical Support Available
+                  </li>
+                  <li>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                    </span> +1 (800) 555-1234
+                  </li>
+                  <li>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                    </span> support@chronohealth.com
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="wow fadeInDown" data-wow-delay="0.1s">
+              <div class="widget">
+                <h5>Our locations</h5>
+                <p>ChronoHealth Headquarters<br>123 Innovation Drive<br>Boston, MA 02115</p>
+              </div>
+            </div>
+            <div class="wow fadeInDown" data-wow-delay="0.1s">
+              <div class="widget">
+                <h5>Follow us</h5>
+                <ul class="company-social">
+                  <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li class="social-youtube"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Core JavaScript Files -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/jquery.appear.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/nivo-lightbox.min.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>
